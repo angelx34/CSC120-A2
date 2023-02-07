@@ -20,6 +20,17 @@ class Computer:
         self.year_made = year_made
         self.price = price
 
-        pass # You'll remove this when you fill out your constructor
+    def printDetails (self) :
+        print (self.description)
+        print (self.processor_type) 
+        print (self.hard_drive_capacity) 
+        print (self.memory)
+        print (self.operating_system)
+        print (self.year_made)
+        print (self.price)
 
+    def update_price(self, new_price) : 
+        self.price= new_price 
+    def update_operating_system(self, New_OS) : 
+        self.operating_system= New_OS
     # What methods will you need?

@@ -19,29 +19,36 @@ class ResaleShop:
         c= Computer(description, processor_type,hard_drive_capacity,memory,operating_system, year_made, price)
         self.inventory.remove(c) 
 
-    def refurbish(self,item_id,new_os): 
-        for item_id in self.inventory : 
-            if item_id == self.inventory.index(c) : # locate the computer
-                if int(["year_made"]) < 2000:
-                    item_id["price"] = 0 # too old to sell, donation only
-                elif int(item_id["year_made"]) < 2012:
-                    item_id["price"] = 250 # heavily-discounted price on machines 10+ years old
-                elif int(item_id["year_made"]) < 2018:
-                    item_id["price"] = 550 # discounted price on machines 4-to-10 year old machines
+    def refurbish(self,c,new_os): 
+        if c in self.inventory : 
+            if c == self.inventory.index(c) : # locate the computer
+                if c.year_made < 2000:
+                    c.price = 0 # too old to sell, donation only
+                elif c.year_made < 2012:
+                    c.price = 250 # heavily-discounted price on machines 10+ years old
+                elif c.year_made < 2018:
+                    c.price = 550 # discounted price on machines 4-to-10 year old machines
                 else:
-                    item_id["price"] = 1000 # recent stuff
+                    c.price = 1000 # recent stuff
                 if new_os is not None:
-                    item_id["operating_system"] = new_os # update details after installing new OS
-            else:
-                print("Item", item_id, "not found. Please select another item to refurbish.")
+                    c.price = new_os # update details after installing new OS
+            else:   
+                print("Item", c, "not found. Please select another item to refurbish.")
     
-    def printInventory(self,description, processor_type,hard_drive_capacity,memory,operating_system, year_made, price):
+    def printInventory(self):
         for c in self.inventory: 
-            c.print.Details(description, processor_type,hard_drive_capacity,memory,operating_system, year_made, price)
+            c.print.Details() 
 
+    def update_price(self,c, new_price) : 
+        if c in self.inventory :
+            self.computer.price= new_price
+
+    def update_price(self,c, new_OS) : 
+        if c in self.inventory :
+            self.computer.operating_system= new_OS
 def main():            
-    myStore= ResaleShop()
-    myStore.buy("A","A", "A","A" ,"A","A","A")        
+    
+           
     print(myStore.inventory)# for big one specify all the description 
 main()
           
