@@ -47,9 +47,9 @@ class ResaleShop:
         if c in self.inventory :
             self.computer.operating_system= new_OS
 def main():            
-    
-           
-    print(myStore.inventory)# for big one specify all the description 
+    myStore =ResaleShop()
+    myStore.printInventory()          
+    myStore.buy()
 main()
           
             
