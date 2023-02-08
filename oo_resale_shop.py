@@ -72,6 +72,3 @@ def main():
     myStore.buy()
 main()
           
-            
-
-
