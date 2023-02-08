@@ -45,4 +45,4 @@ class Computer:
         self.price= new_price 
     def update_operating_system(self, New_OS) : 
         self.operating_system= New_OS
-    
+     
